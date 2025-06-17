@@ -1,0 +1,28 @@
+{% extends 'todoapp/base.html' %}
+{% block content %}
+<h2>Register</h2>
+
+{% if error_message %}
+<div class="error_message"
+    {{ error_message }}
+</div>
+{% endif %}
+
+
+<form method="POST">
+    {% csrf_token %}
+    
+    {% for field in form %}
+        <div>
+            <label for="">{{ field.label }}</label>
+            <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" >
+        </div>
+    {% endfor %}<br>
+
+    <button type="submit">Register</button>
+    <p>Already have an account?<a href="{% url 'login' %}">Login</a></p>
+    
+    
+    
+</form>
+{% endblock %}
