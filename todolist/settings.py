@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost").split(",")
 ALLOWED_HOSTS = ['todo-list-svym.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://todo-list-svym.onrender.com']
+
 
 
 # Application definition
